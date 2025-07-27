@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BGMCS Library - Events</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="https://img.icons8.com/ios-filled/50/000000/book.png" type="image/x-icon">
+</head>
+<body>
+    <div class="preloader">
+    <div class="spinner"></div>
+  </div>
+
+  <header>
+    <nav>
+      <a href="index.html" class="logo">
+        <img src="https://img.icons8.com/ios-filled/50/000000/book.png" alt="Library Logo">
+        <h1>BGMCS Library</h1>
+      </a>
+      <ul class="nav-links">
+  <li><a href="index.html" class="active"><i class="fas fa-home"></i> Home</a></li>
+  <li><a href="services.html"><i class="fas fa-concierge-bell"></i> Services</a></li>
+  <li><a href="events.html"><i class="fas fa-calendar-alt"></i> Events</a></li>
+  <li><a href="catalog.html"><i class="fas fa-book-open"></i> Catalog</a></li>
+  <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+   <li class="account-dropdown">
+    <a href="#"><i class="fas fa-user"></i> Account <i class="fas fa-chevron-down"></i></a>
+    <ul class="dropdown-menu">
+      <li><a href="login.html">Login</a></li>
+      <li><a href="register.html">Register</a></li>
+    </ul>
+  </li>
+</ul>
+      <div class="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </nav>
+  </header>
+  <section class="events-hero">
+    <div>
+      <h1>Upcoming Events</h1>
+      <p>Join us for exciting programs, workshops, and community gatherings at the library.</p>
+    </div>
+  </section>
+
+      
+  
+<section class="highlights-shelf">
+  <div class="shelf-container">
+    <div class="shelf-title">
+      <h2>July Highlights</h2>
+      <p>Discover our featured events through this interactive timeline</p>
+    </div>
+    
+    <div class="highlight-timeline">
+      <div class="highlight-item animate-on-scroll">
+        <div class="highlight-marker">
+          <i class="fas fa-book"></i>
+        </div>
+        <div class="highlight-content">
+          <span class="highlight-date">July 1 - August 31</span>
+          <h3>Summer Reading Challenge</h3>
+          <p>Our annual reading program with prizes and activities for all ages throughout the summer months.</p>
+        </div>
+      </div>
+      
+      <div class="highlight-item animate-on-scroll">
+        <div class="highlight-marker">
+          <i class="fas fa-child"></i>
+        </div>
+        <div class="highlight-content">
+          <span class="highlight-date">July 8, 10am-2pm</span>
+          <h3>Children's Craft Fair</h3>
+          <p>A day of creative crafts and activities for children ages 3-12. All materials will be provided.</p>
+        </div>
+      </div>
+      
+      <div class="highlight-item animate-on-scroll">
+        <div class="highlight-marker">
+          <i class="fas fa-laptop"></i>
+        </div>
+        <div class="highlight-content">
+          <span class="highlight-date">July 15-20</span>
+          <h3>Tech Week Workshops</h3>
+          <p>Daily workshops covering topics from basic computer skills to introductory coding for beginners.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="events-section">
+  <h2 style="
+    margin-bottom:100px;
+    font-size:50px;">Upcoming Events</h2>
+  
+  <!-- Event Card 1 -->
+  <div class="event-card-custom animate-on-scroll">
+    <div class="event-image-container">
+      <img src="Image/Bookclub.jpg" alt="Book Club Event" />
+    </div>
+    <div class="event-content-custom">
+      <div class="event-details-custom">
+        <h3>Book Club: April Edition</h3>
+        <div class="event-meta-custom">
+          <span><i class="fas fa-calendar-alt"></i> April 20, 2025</span>
+          <span><i class="fas fa-clock"></i> 7:00 AM</span>
+          <span><i class="fas fa-map-marker-alt"></i>Main Library</span>
+        </div>
+        <p>Join us for a discussion on 'Pride and Prejudice'! Share your thoughts and meet fellow book lovers.</p>
+      </div>
+      <div class="event-countdown-custom">
+        <div class="countdown-title">Event starts in:</div>
+        <div class="countdown-grid" id="countdown-1">
+          <div class="countdown-item">
+            <div class="countdown-value" id="days-1">00</div>
+            <div class="countdown-label">Days</div>
+          </div>
+          <div class="countdown-item">
+            <div class="countdown-value" id="hours-1">00</div>
+            <div class="countdown-label">Hours</div>
+          </div>
+          <div class="countdown-item">
+            <div class="countdown-value" id="minutes-1">00</div>
+            <div class="countdown-label">Minutes</div>
+          </div>
+          <div class="countdown-item">
+            <div class="countdown-value" id="seconds-1">00</div>
+            <div class="countdown-label">Seconds</div>
+          </div>
+        </div>
+      </div>
+      <a href="#" class="btn">Register Now</a>
+    </div>
+  </div>
+  
+
+  <div class="event-card-custom animate-on-scroll">
+    <div class="event-image-container">
+      <img src="image/story.jpg" alt="Children's Storytime" />
+    </div>
+    <div class="event-content-custom">
+      <div class="event-details-custom">
+        <h3>Children's Storytime</h3>
+        <div class="event-meta-custom">
+          <span><i class="fas fa-calendar-alt"></i> April 22, 2025</span>
+          <span><i class="fas fa-clock"></i> 10:00 AM</span>
+          <span><i class="fas fa-map-marker-alt"></i> Children's Section</span>
+        </div>
+        <p>Let your little ones enjoy magical tales read by our lively storytellers!</p>
+      </div>
+      <div class="event-countdown-custom">
+        <div class="countdown-title">Event starts in:</div>
+        <div class="countdown-grid" id="countdown-2">
+          <div class="countdown-item">
+            <div class="countdown-value" id="days-2">00</div>
+            <div class="countdown-label">Days</div>
+          </div>
+          <div class="countdown-item">
+            <div class="countdown-value" id="hours-2">00</div>
+            <div class="countdown-label">Hours</div>
+          </div>
+          <div class="countdown-item">
+            <div class="countdown-value" id="minutes-2">00</div>
+            <div class="countdown-label">Minutes</div>
+          </div>
+          <div class="countdown-item">
+            <div class="countdown-value" id="seconds-2">00</div>
+            <div class="countdown-label">Seconds</div>
+          </div>
+        </div>
+      </div>
+      <a href="#" class="btn">Learn More</a>
+    </div>
+  </div>
+</section>
+<section class="past-events-section">
+  <h2>Past Events</h2>
+  
+  <div class="event-card-custom animate-on-scroll">
+    <div class="event-image-container">
+      <div class="event-gallery">
+        <img src="image/booksell1.jpg" alt="Book Sale 1" />
+        <img src="image/booksell2.jpg" alt="Book Sale 2" />
+        <img src="image/booksell3.jpg" alt="Book Sale 3" />
+        <img src="image/booksell6.jpg" alt="Book Sale 4" />
+      </div>
+    </div>
+    <div class="event-content-custom">
+      <div class="event-details-custom">
+        <h3>Annual Book Selling Event</h3>
+        <div class="event-meta-custom">
+          <span><i class="fas fa-calendar-alt"></i> April 10, 2025</span>
+          <span><i class="fas fa-clock"></i> 2:00 aM - 10:00 aM</span>
+        </div>
+        <p>Our highly anticipated book selling event offered discounted books across various genres, with special deals on bestsellers and classics.</p>
+      </div>
+      <a href="#" class="btn">View Details</a>
+    </div>
+  </div>
+</section>
+
+  <section class="elegant-events">
+  <div class="elegant-container">
+    <div class="elegant-header">
+      <h2 class="elegant-title">Event Categories</h2>
+      <p class="elegant-subtitle">Discover our curated program offerings</p>
+    </div>
+    
+    <div class="elegant-gallery">
+      
+      <div class="elegant-card">
+        <div class="card-front" style="background-image: url('https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80')">
+          <div class="card-overlay"></div>
+          <div class="card-content">
+            <div class="card-icon">
+              <i class="fas fa-book-reader"></i>
+            </div>
+            <h3>Literary Salons</h3>
+          </div>
+        </div>
+        <div class="card-back">
+          <div class="back-content">
+            <h3>Literary Salons</h3>
+            <p>Engage in thoughtful discussions with authors and fellow bibliophiles in our intimate reading circles.</p>
+            <a href="#" class="elegant-btn">View Schedule</a>
+          </div>
+        </div>
+      </div>
+      
+    
+      <div class="elegant-card">
+        <div class="card-front" style="background-image: url('https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80')">
+          <div class="card-overlay"></div>
+          <div class="card-content">
+            <div class="card-icon">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <h3>Lectures</h3>
+          </div>
+        </div>
+        <div class="card-back">
+          <div class="back-content">
+            <h3>Lectures</h3>
+            <p>Enrich your mind with our distinguished speaker series featuring renowned academics.</p>
+            <a href="#" class="elegant-btn">View Schedule</a>
+          </div>
+        </div>
+      </div>
+      
+      
+      <div class="elegant-card">
+        <div class="card-front" style="background-image: url('https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80')">
+          <div class="card-overlay"></div>
+          <div class="card-content">
+            <div class="card-icon">
+              <i class="fas fa-child"></i>
+            </div>
+            <h3>Young Minds</h3>
+          </div>
+        </div>
+        <div class="card-back">
+          <div class="back-content">
+            <h3>Young Minds</h3>
+            <p>Inspire creativity and curiosity through our imaginative programs for children.</p>
+            <a href="#" class="elegant-btn">View Schedule</a>
+          </div>
+        </div>
+      </div>
+      
+      
+      <div class="elegant-card">
+        <div class="card-front" style="background-image: url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80')">
+          <div class="card-overlay"></div>
+          <div class="card-content">
+            <div class="card-icon">
+              <i class="fas fa-laptop-code"></i>
+            </div>
+            <h3>Digital Literacy</h3>
+          </div>
+        </div>
+        <div class="card-back">
+          <div class="back-content">
+            <h3>Digital Literacy</h3>
+            <p>Master new technologies through our hands-on workshops and demonstrations.</p>
+            <a href="#" class="elegant-btn">View Schedule</a>
+          </div>
+        </div>
+      </div>
+      
+     
+      <div class="elegant-card">
+        <div class="card-front" style="background-image: url('https://images.unsplash.com/photo-1493787039806-2edcbe808750?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80')">
+          <div class="card-overlay"></div>
+          <div class="card-content">
+            <div class="card-icon">
+              <i class="fas fa-history"></i>
+            </div>
+            <h3>Heritage</h3>
+          </div>
+        </div>
+        <div class="card-back">
+          <div class="back-content">
+            <h3>Heritage</h3>
+            <p>Explore our community's rich history through archival exhibits and talks.</p>
+            <a href="#" class="elegant-btn">View Schedule</a>
+          </div>
+        </div>
+      </div>
+      
+     
+      <div class="elegant-card">
+        <div class="card-front" style="background-image: url('https://images.unsplash.com/photo-1501612780327-45045538702b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80')">
+          <div class="card-overlay"></div>
+          <div class="card-content">
+            <div class="card-icon">
+              <i class="fas fa-music"></i>
+            </div>
+            <h3>Cultural Arts</h3>
+          </div>
+        </div>
+        <div class="card-back">
+          <div class="back-content">
+            <h3>Cultural Arts</h3>
+            <p>Experience the vibrant arts scene through performances and exhibitions.</p>
+            <a href="#" class="elegant-btn">View Schedule</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+]
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3>About Us</h3>
+        <p>Established in 1997, the BGMCS Bahir Dar School Library supports students and teachers with a quiet reading space, textbooks, storybooks, and helpful reference materials. It plays a key role in encouraging learning and a love for reading.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="catalog.html">Book Catalog</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+           <li class="account-dropdown">
+    <a href="#"><i class="fas fa-user"></i> Account <i class="fas fa-chevron-down"></i></a>
+    <ul class="dropdown-menu">
+      <li><a href="login.html">Login</a></li>
+      <li><a href="register.html">Register</a></li>
+    </ul>
+  </li>
+        </ul>
+      </div>
+      
+      <div class="footer-col">
+        <h3>Opening Hours</h3>
+        <ul class="footer-links">
+          <li>Monday - Friday: 2am - 9am</li>
+        </ul>
+      </div>
+      
+      <div class="footer-col">
+        <h3>Contact Info</h3>
+        <p><i class="fas fa-map-marker-alt"></i> Kebele 13, Bahirdar</p>
+        <p><i class="fas fa-phone"></i> +251 918767822</p>
+        <p><i class="fas fa-envelope"></i> info@bgmcs.org</p>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2025 Blessed G/michael Catholic Secondary School Library. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  
+  <a href="#" class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

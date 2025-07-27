@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BGMCS Library | Contact</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="https://img.icons8.com/ios-filled/50/000000/book.png" type="image/x-icon">
+</head>
+<body>
+
+  <div class="preloader">
+    <div class="spinner"></div>
+  </div>
+
+  
+  <header>
+    <nav>
+      <a href="index.html" class="logo">
+        <img src="https://img.icons8.com/ios-filled/50/000000/book.png" alt="Library Logo">
+        <h1>BGMCS Library</h1>
+      </a>
+      <ul class="nav-links">
+  <li><a href="index.html" class="active"><i class="fas fa-home"></i> Home</a></li>
+  <li><a href="services.html"><i class="fas fa-concierge-bell"></i> Services</a></li>
+  <li><a href="events.html"><i class="fas fa-calendar-alt"></i> Events</a></li>
+  <li><a href="catalog.html"><i class="fas fa-book-open"></i> Catalog</a></li>
+  <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+   <li class="account-dropdown">
+    <a href="#"><i class="fas fa-user"></i> Account <i class="fas fa-chevron-down"></i></a>
+    <ul class="dropdown-menu">
+      <li><a href="login.html">Login</a></li>
+      <li><a href="register.html">Register</a></li>
+    </ul>
+  </li>
+</ul>
+      <div class="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </nav>
+  </header>
+
+  <section class="contact-hero">
+    <div class="parallax-content">
+      <h1>Contact Us</h1>
+      <p>We're here to help with all your library needs</p>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="contact-container">
+   
+      <div class="contact-info-card animate-on-scroll">
+        <div class="contact-info-header">
+          <h2><i class="fas fa-info-circle"></i> General Information</h2>
+        </div>
+        <div class="contact-info-body">
+          <div class="contact-method">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="contact-details">
+              <h3>Location</h3>
+              <p><br>Kebele 13, Bahirdar</p>
+              <a href="#" class="map-link">View on Map <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+          
+          <div class="contact-method">
+            <div class="contact-icon">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <div class="contact-details">
+              <h3>Phone</h3>
+              <p>Main: +251 918767822</p>
+            </div>
+          </div>
+          
+          <div class="contact-method">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="contact-details">
+              <h3>Email</h3>
+              <p>General: <a href="mailto:info@bgmcslibrary.org">info@bgmcslibrary.org</a><br>
+              Suggestions: <a href="mailto:suggestions@bgmcslibrary.org">suggestions@bgmcslibrary.org</a></p>
+            </div>
+          </div>
+          
+          <div class="contact-method">
+            <div class="contact-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div class="contact-details">
+              <h3>Hours</h3>
+              <p>Monday-Friday: 2am-9am</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+  
+      <div class="contact-form-card animate-on-scroll">
+        <div class="contact-form-header">
+          <h2><i class="fas fa-paper-plane"></i> Send Us a Message</h2>
+        </div>
+        <div class="contact-form-body">
+          <form id="contactForm">
+            <div class="form-group">
+              <label for="name">Your Name *</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="subject">Subject *</label>
+              <select id="subject" name="subject" required>
+                <option value="">Select a subject</option>
+                <option value="general">General Inquiry</option>
+                <option value="account">Library Account</option>
+                <option value="suggestion">Book Suggestion</option>
+                <option value="event">Event Information</option>
+                <option value="tech">Technology Help</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Your Message *</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">
+                <i class="fas fa-paper-plane"></i> Send Message
+              </button>
+              <div class="form-note">
+                * Required fields
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section" style="background-color: var(--light-brown);">
+    <div class="section-title">
+      <h2>Department Contacts</h2>
+      <p>Connect directly with specific departments</p>
+    </div>
+    
+    <div class="department-grid">
+      <div class="department-card animate-on-scroll">
+        <div class="department-icon">
+          <i class="fas fa-book"></i>
+        </div>
+        <h3>Circulation</h3>
+        <p>For account and borrowing questions</p>
+        <a href="mailto:circulation@bgmcslibrary.org" class="department-email">circulation@bgmcslibrary.org</a>
+        <div class="department-phone">+251 918767822</div>
+      </div>
+      
+      <div class="department-card animate-on-scroll">
+        <div class="department-icon">
+          <i class="fas fa-child"></i>
+        </div>
+        <h3>Children's Services</h3>
+        <p>Programs for young readers</p>
+        <a href="mailto:children@bgmcslibrary.org" class="department-email">children@bgmcslibrary.org</a>
+        <div class="department-phone">+251 918767822</div>
+      </div>
+      
+      <div class="department-card animate-on-scroll">
+        <div class="department-icon">
+          <i class="fas fa-calendar-alt"></i>
+        </div>
+        <h3>Events</h3>
+        <p>Program and room booking</p>
+        <a href="mailto:events@bgmcslibrary.org" class="department-email">events@bgmcslibrary.org</a>
+        <div class="department-phone">+251 918767822</div>
+      </div>
+      
+      <div class="department-card animate-on-scroll">
+        <div class="department-icon">
+          <i class="fas fa-laptop"></i>
+        </div>
+        <h3>Technology Help</h3>
+        <p>Computer and digital resources</p>
+        <a href="mailto:techhelp@bgmcslibrary.org" class="department-email">techhelp@bgmcslibrary.org</a>
+        <div class="department-phone">+251 918767822</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-title">
+      <h2>Visit Our Location</h2>
+    </div>
+
+ <div class="map-container animate-on-scroll">
+  <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3908.226800675577!2d37.359358174068554!3d11.607173588596662!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1644cd33dbb331ed%3A0xb8babf536b62174f!2sBlessed%20G%2FMichael%20Catholic%20High%20School!5e0!3m2!1sen!2set!4v1750262472384!5m2!1sen!2set" 
+    width="100%" 
+    height="450" 
+    style="border:0;" 
+    allowfullscreen="" 
+    loading="lazy" 
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+</div>
+
+   <div class="transportation-options">
+  <div class="transportation-card animate-on-scroll">
+    <i class="fas fa-bus"></i>
+    <h3>By Minibus</h3>
+    <p>Take a minibus towards Kebele 13 and stop at Geter Menged</p>
+  </div>
+
+  <div class="transportation-card animate-on-scroll">
+    <i class="fas fa-car"></i>
+    <h3>By Bajaj</h3>
+    <p>Bajaj rides are available from anywhere in Bahir Dar directly to the school gate</p>
+  </div>
+
+  <div class="transportation-card animate-on-scroll">
+    <i class="fas fa-bicycle"></i>
+    <h3>Bike Friendly</h3>
+    <p>Students and visitors can park bicycles inside the compound</p>
+  </div>
+
+  <div class="transportation-card animate-on-scroll">
+    <i class="fas fa-parking"></i>
+    <h3>Parking</h3>
+    <p>Parking space is available in front of the school and along Geter Menged</p>
+  </div>
+</div>
+
+<section class="section" style="background-color: var(--cream);">
+  <div class="section-title">
+    <h2>Frequently Asked Questions</h2>
+    <p>Quick answers to common questions</p>
+  </div>
+  
+  <div class="faq-container">
+    <div class="faq-item animate-on-scroll">
+      <button class="faq-question">
+        How do I get a library card?
+        <i class="fas fa-chevron-down"></i>
+      </button>
+      <div class="faq-answer">
+        <p>You can register for a free library card at any of our branches with valid photo ID and proof of address. You can also begin the process online through our website. Library cards are available to all residents of Bookville and surrounding areas. Children under 18 need a parent or guardian's signature.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item animate-on-scroll">
+      <button class="faq-question">
+        What are your holiday hours?
+        <i class="fas fa-chevron-down"></i>
+      </button>
+      <div class="faq-answer">
+        <p>On most holidays, we're open from 2am to 9pm. We're closed on Ephiphany, Meskel, Christmas, Ester, and New Year's Day. Check our website for specific holiday schedules. Summer hours (June-August) may vary, with extended hours on weekdays.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item animate-on-scroll">
+      <button class="faq-question">
+        Can I renew my books online?
+        <i class="fas fa-chevron-down"></i>
+      </button>
+      <div class="faq-answer">
+        <p>Yes! Log in to your account on our website or mobile app to renew items. Most materials can be renewed twice if there are no holds on them. Some special collection items may have different renewal policies. You'll receive email reminders before items are due.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item animate-on-scroll">
+      <button class="faq-question">
+        Do you have study rooms available?
+        <i class="fas fa-chevron-down"></i>
+      </button>
+      <div class="faq-answer">
+        <p>We have 12 study rooms available on a first-come, first-served basis. Rooms can be reserved in advance by library card holders for up to 2 hours per day. Study rooms include whiteboards, power outlets, and some have computer hookups. Group study rooms accommodate 4-8 people.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item animate-on-scroll">
+      <button class="faq-question">
+        How many items can I borrow at once?
+        <i class="fas fa-chevron-down"></i>
+      </button>
+      <div class="faq-answer">
+        <p>Regular patrons can borrow up to 30 items at once, including up to 10 DVDs and 5 video games. Teachers with educator cards may borrow up to 50 items. There are no limits on e-books and digital audiobooks through our OverDrive/Libby service.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item animate-on-scroll">
+      <button class="faq-question">
+        Do you offer notary services?
+        <i class="fas fa-chevron-down"></i>
+      </button>
+      <div class="faq-answer">
+        <p>Yes, we offer free notary services at our main branch. Please call ahead to confirm notary availability as hours vary. Bring your unsigned document and valid photo ID. Notaries cannot notarize wills, real estate documents, or documents in languages they don't understand.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item animate-on-scroll">
+      <button class="faq-question">
+        Can I donate books to the library?
+        <i class="fas fa-chevron-down"></i>
+      </button>
+      <div class="faq-answer">
+        <p>We accept donations of gently used books, DVDs, and CDs during regular hours. We cannot accept textbooks, encyclopedias, magazines, or damaged items. Donations may be added to our collection or sold in our Friends of the Library book sales to support library programs.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item animate-on-scroll">
+      <button class="faq-question">
+        Do you have meeting rooms for public use?
+        <i class="fas fa-chevron-down"></i>
+      </button>
+      <div class="faq-answer">
+        <p>Our community meeting room seats up to 50 people and is available for free to non-profit groups when not in use for library programs. Reservations can be made up to 3 months in advance. Commercial groups may rent the space for a small fee. Kitchen facilities are available.</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="text-center" style="margin-top: 3rem;">
+    <p>Didn't find your answer? <a href="#contactForm" class="btn btn-primary">Contact Us</a></p>
+  </div>
+</section>
+
+
+ <footer style="
+  padding: 5rem 5% 2rem;
+  background-color: var(--dark-brown);
+  color: var(--light-brown);
+  width: 100%;">
+    <div style="
+    display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;" class="footer-container">
+      <div class="footer-col">
+        <h3>About Us</h3>
+        <p>Established in 1997, the BGMCS Bahir Dar School Library supports students and teachers with a quiet reading space, textbooks, storybooks, and helpful reference materials. It plays a key role in encouraging learning and a love for reading.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="catalog.html">Book Catalog</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+           <li class="account-dropdown">
+    <a href="#"><i class="fas fa-user"></i> Account <i class="fas fa-chevron-down"></i></a>
+    <ul class="dropdown-menu">
+      <li><a href="login.html">Login</a></li>
+      <li><a href="register.html">Register</a></li>
+    </ul>
+  </li>
+        </ul>
+      </div>
+      
+      <div class="footer-col">
+        <h3>Opening Hours</h3>
+        <ul class="footer-links">
+          <li>Monday - Friday: 2am - 9am</li>
+        </ul>
+      </div>
+      
+      <div class="footer-col">
+        <h3>Contact Info</h3>
+        <p><i class="fas fa-map-marker-alt"></i>  Kebele 13, Bahirdar</p>
+        <p><i class="fas fa-phone"></i>+251 918767822</p>
+        <p><i class="fas fa-envelope"></i> info@bgmcslibrary.org</p>
+      </div>
+    </div>
+    
+    <div style=
+    " text-align: center;
+  padding-top: 3rem;
+  margin-top: 3rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100%;"class="footer-bottom">
+      <p>&copy; 2025 Blessed G/michael Catholic Secondary School Library. All Rights Reserved.</p>
+    </div>
+  </footer>
+  <a href="#" class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

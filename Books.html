@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BGMCS Library | Ethiopian Curriculum Books</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="https://img.icons8.com/ios-filled/50/000000/book.png" type="image/x-icon">
+  <style>
+    .cb-page {
+      padding: 5rem 5%;
+      background-color: var(--cream);
+    }
+    
+    .cb-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    .cb-header h1 {
+      font-size: 2.5rem;
+      color: var(--dark-brown);
+      margin-bottom: 1rem;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .cb-header h1::after {
+      content: '';
+      position: absolute;
+      width: 80px;
+      height: 4px;
+      background: var(--accent);
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+    .cb-header p {
+      color: var(--text);
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+    }
+    
+    .cb-tabs {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    
+    .cb-tab {
+      padding: 0.8rem 2rem;
+      background: var(--white);
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: 500;
+      color: var(--dark-brown);
+      border: 2px solid var(--light-brown);
+      transition: all 0.3s ease;
+    }
+    
+    .cb-tab.active {
+      background: var(--medium-brown);
+      color: var(--white);
+      border-color: var(--medium-brown);
+    }
+    
+    .cb-tab:hover:not(.active) {
+      background: var(--light-brown);
+      color: var(--white);
+    }
+    
+    .cb-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    
+    .cb-card {
+      background: var(--white);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .cb-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .cb-cover {
+      height: 200px;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .cb-cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .cb-card:hover .cb-cover img {
+      transform: scale(1.05);
+    }
+    
+    .cb-badge {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background: var(--accent);
+      color: var(--white);
+      padding: 0.3rem 1rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+    
+    .cb-content {
+      padding: 1.5rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .cb-title {
+      font-size: 1.2rem;
+      color: var(--dark-brown);
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
+    }
+    
+    .cb-author {
+      color: var(--accent);
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+    
+    .cb-meta {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+    
+    .cb-pages,
+    .cb-year {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    
+    .cb-actions {
+      margin-top: auto;
+      display: flex;
+      gap: 1rem;
+    }
+    
+    .cb-download {
+      flex: 1;
+      background: var(--medium-brown);
+      color: var(--white);
+      padding: 0.6rem;
+      border-radius: 5px;
+      text-align: center;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+    
+    .cb-download:hover {
+      background: var(--dark-brown);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(58, 46, 40, 0.2);
+    }
+    
+    .cb-preview {
+      flex: 1;
+      background: var(--light-brown);
+      color: var(--dark-brown);
+      padding: 0.6rem;
+      border-radius: 5px;
+      text-align: center;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+    
+    .cb-preview:hover {
+      background: var(--accent);
+      color: var(--white);
+      transform: translateY(-3px);
+    }
+    
+    .cb-section {
+      display: none;
+    }
+    
+    .cb-section.active {
+      display: block;
+      animation: fadeIn 0.5s ease;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .cb-header h1 {
+        font-size: 2rem;
+      }
+      
+      .cb-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      }
+      
+      .cb-tabs {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .cb-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .cb-actions {
+        flex-direction: column;
+      }
+      
+      .cb-download,
+      .cb-preview {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="preloader">
+    <div class="spinner"></div>
+  </div>
+
+  <header>
+    <nav>
+      <a href="index.html" class="logo">
+        <img src="https://img.icons8.com/ios-filled/50/000000/book.png" alt="Library Logo">
+        <h1>BGMCS Library</h1>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="services.html"><i class="fas fa-concierge-bell"></i> Services</a></li>
+        <li><a href="events.html"><i class="fas fa-calendar-alt"></i> Events</a></li>
+        <li><a href="catalog.html"><i class="fas fa-book-open"></i> Catalog</a></li>
+        <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+        <li class="account-dropdown">
+          <a href="#"><i class="fas fa-user"></i> Account <i class="fas fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+          </ul>
+        </li>
+      </ul>
+      <div class="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="cb-page">
+    <div class="cb-header">
+      <h1 style="
+        margin-top:90px;">Ethiopian Curriculum Books</h1>
+      <p>Download textbooks and resources aligned with the Ethiopian national curriculum</p>
+    </div>
+    
+    <div class="cb-tabs">
+      <div class="cb-tab active" data-tab="natural-science">Natural Science</div>
+      <div class="cb-tab" data-tab="social-science">Social Science</div>
+      <div class="cb-tab" data-tab="entrance-exam">Entrance Exam</div>
+    </div>
+    
+
+    <div class="cb-section active" id="natural-science">
+      <h2 class="section-title">Natural Science Textbooks</h2>
+      
+      <div class="cb-grid">
+        <!-- Physics -->
+        <div class="cb-card">
+          <div class="cb-cover">
+            <img src="Image/Physics.png" alt="Physics Textbook">
+            <span class="cb-badge">Grade 9</span>
+          </div>
+          <div class="cb-content">
+            <h3 class="cb-title">Physics for Ethiopian Students - Grade 9</h3>
+            <p class="cb-author">Ministry of Education</p>
+            <div class="cb-meta">
+              <span class="cb-pages"><i class="fas fa-book-open"></i> 320 pages</span>
+              <span class="cb-year"><i class="fas fa-calendar-alt"></i> 2023</span>
+            </div>
+            <div class="cb-actions">
+              <a href="pdfs/Physics.pdf" class="cb-download" download>
+                <i class="fas fa-download"></i> Download
+              </a>
+              <a href="#" class="cb-preview">
+                <i class="fas fa-eye"></i> Preview
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Chemistry -->
+        <div class="cb-card">
+          <div class="cb-cover">
+            <img src="Image/Chemistry.png" alt="Chemistry Textbook">
+            <span class="cb-badge">Grade 10</span>
+          </div>
+          <div class="cb-content">
+            <h3 class="cb-title">Chemistry for Ethiopian Students - Grade 10</h3>
+            <p class="cb-author">Ministry of Education</p>
+            <div class="cb-meta">
+              <span class="cb-pages"><i class="fas fa-book-open"></i> 280 pages</span>
+              <span class="cb-year"><i class="fas fa-calendar-alt"></i> 2023</span>
+            </div>
+            <div class="cb-actions">
+              <a href="pdfs/Chemistry.pdf" class="cb-download" download>
+                <i class="fas fa-download"></i> Download
+              </a>
+              <a href="#" class="cb-preview">
+                <i class="fas fa-eye"></i> Preview
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Biology -->
+        <div class="cb-card">
+          <div class="cb-cover">
+            <img src="Image/Biology.png" alt="Biology Textbook">
+            <span class="cb-badge">Grade 11</span>
+          </div>
+          <div class="cb-content">
+            <h3 class="cb-title">Biology for Ethiopian Students - Grade 11</h3>
+            <p class="cb-author">Ministry of Education</p>
+            <div class="cb-meta">
+              <span class="cb-pages"><i class="fas fa-book-open"></i> 350 pages</span>
+              <span class="cb-year"><i class="fas fa-calendar-alt"></i> 2023</span>
+            </div>
+            <div class="cb-actions">
+              <a href="pdfs/Biology.pdf" class="cb-download" download>
+                <i class="fas fa-download"></i> Download
+              </a>
+              <a href="#" class="cb-preview">
+                <i class="fas fa-eye"></i> Preview
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Mathematics -->
+        <div class="cb-card">
+          <div class="cb-cover">
+            <span class="cb-badge">Grade 12</span>
+          </div>
+          <div class="cb-content">
+            <h3 class="cb-title">Mathematics for Ethiopian Students - Grade 12</h3>
+            <p class="cb-author">Ministry of Education</p>
+            <div class="cb-meta">
+              <span class="cb-pages"><i class="fas fa-book-open"></i> 400 pages</span>
+              <span class="cb-year"><i class="fas fa-calendar-alt"></i> 2023</span>
+            </div>
+            <div class="cb-actions">
+              <a href="pdfs/math-grade12.pdf" class="cb-download" download>
+                <i class="fas fa-download"></i> Download
+              </a>
+              <a href="#" class="cb-preview">
+                <i class="fas fa-eye"></i> Preview
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Physics Lab Guide -->
+        <div class="cb-card">
+          <div class="cb-cover">
+            <span class="cb-badge">Lab Guide</span>
+          </div>
+          <div class="cb-content">
+            <h3 class="cb-title">Physics Laboratory Guide - Grades 9-12</h3>
+            <p class="cb-author">Ethiopian Science Academy</p>
+            <div class="cb-meta">
+              <span class="cb-pages"><i class="fas fa-book-open"></i> 180 pages</span>
+              <span class="cb-year"><i class="fas fa-calendar-alt"></i> 2022</span>
+            </div>
+            <div class="cb-actions">
+              <a href="pdfs/physics-lab-guide.pdf" class="cb-download" download>
+                <i class="fas fa-download"></i> Download
+              </a>
+              <a href="#" class="cb-preview">
+                <i class="fas fa-eye"></i> Preview
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Chemistry Lab Guide -->
+        <div class="cb-card">
+          <div class="cb-cover">
+            <span class="cb-badge">Lab Guide</span>
+          </div>
+          <div class="cb-content">
+            <h3 class="cb-title">Chemistry Laboratory Guide - Grades 9-12</h3>
+            <p class="cb-author">Ethiopian Science Academy</p>
+            <div class="cb-meta">
+              <span class="cb-pages"><i class="fas fa-book-open"></i> 160 pages</span>
+              <span class="cb-year"><i class="fas fa-calendar-alt"></i> 2022</span>
+            </div>
+            <div class="cb-actions">
+              <a href="pdfs/chemistry-lab-guide.pdf" class="cb-download" download>
+                <i class="fas fa-download"></i> Download
+              </a>
+              <a href="#" class="cb-preview">
+                <i class="fas fa-eye"></i> Preview
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="cb-section" id="social-science">
+      <h2 class="section-title">Social Science Textbooks</h2>
+      
+      <div class="cb-grid">
+        <!-- History -->
+        <div class="cb-card">
+          <div class="cb-cover">
+            <img src="Image/His.png" alt="History Textbook">
+            <span class="cb-badge">Grade 9</span>
+          </div>
+          <div class="cb-content">
+            <h3 class="cb-title">Ethiopian History - Grade 9</h3>
+            <p class="cb-author">Ministry of Education</p>
+            <div class="cb-meta">
+              <span class="cb-pages"><i class="fas fa-book-open"></i> 250 pages</span>
+              <span class="cb-year"><i class="fas fa-calendar-alt"></i> 2023</span>
+            </div>
+            <div class="cb-actions">
+              <a href="pdfs/History.pdf" class="cb-download" download>
+                <i class="fas fa-download"></i> Download
+              </a>
+              <a href="#" class="cb-preview">
+                <i class="fas fa-eye"></i> Preview
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Geography -->
+        <div class="cb-card">
+          <div class="cb-cover">
+            <img src="Image/Geo.png" alt="Geography Textbook">
+            <span class="cb-badge">Grade 10</span>
+          </div>
+          <div class="cb-content">
+            <h3 class="cb-title">Geography of Ethiopia - Grade 10</h3>
+            <p class="cb-author">Ministry of Education</p>
+            <div class="cb-meta">
+              <span class="cb-pages"><i class="fas fa-book-open"></i> 300 pages</span>
+              <span class="cb-year"><i class="fas fa-calendar-alt"></i> 2023</span>
+            </div>
+            <div class="cb-actions">
+              <a href="pdfs/Geography.pdf" class="cb-download" download>
+                <i class="fas fa-download"></i> Download
+              </a>
+              <a href="#" class="cb-preview">
+                <i class="fas fa-eye"></i> Preview
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Civics -->
+        <div class="cb-card">
+          <div class="cb-cover">
+            <img src="Image/Civics.png">
+            <span class="cb-badge">Grade 11</span>
+          </div>
+          <div class="cb-content">
+            <h3 class="cb-title">Civics and Ethical Education - Grade 11</h3>
+            <p class="cb-author">Ministry of Education</p>
+            <div class="cb-meta">
+              <span class="cb-pages"><i class="fas fa-book-open"></i> 220 pages</span>
+              <span class="cb-year"><i class="fas fa-calendar-alt"></i> 2023</span>
+            </div>
+            <div class="cb-actions">
+              <a href="pdfs/Civics.pdf" class="cb-download" download>
+                <i class="fas fa-download"></i> Download
+              </a>
+              <a href="#" class="cb-preview">
+                <i class="fas fa-eye"></i> Preview
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Economics -->
+        <div class="cb-card">
+          <div class="cb-cover">
+            <span class="cb-badge">Grade 12</span>
+          </div>
+          <div class="cb-content">
+            <h3 class="cb-title">Economics for Ethiopia - Grade 12</h3>
+            <p class="cb-author">Ministry of Education</p>
+            <div class="cb-meta">
+              <span class="cb-pages"><i class="fas fa-book-open"></i> 350 pages</span>
+              <span class="cb-year"><i class="fas fa-calendar-alt"></i> 2023</span>
+            </div>
+            <div class="cb-actions">
+              <a href="pdfs/economics-grade12.pdf" class="cb-download" download>
+                <i class="fas fa-download"></i> Download
+              </a>
+              <a href="#" class="cb-preview">
+                <i class="fas fa-eye"></i> Preview
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- History Reference -->
+        <div class="cb-card">
+          <div class="cb-cover">
+            <span class="cb-badge">Reference</span>
+          </div>
+          <div class="cb-content">
+            <h3 class="cb-title">Ethiopian History Reference Book</h3>
+            <p class="cb-author">Ethiopian Historical Society</p>
+            <div class="cb-meta">
+              <span class="cb-pages"><i class="fas fa-book-open"></i> 450 pages</span>
+              <span class="cb-year"><i class="fas fa-calendar-alt"></i> 2021</span>
+            </div>
+            <div class="cb-actions">
+              <a href="pdfs/history-reference.pdf" class="cb-download" download>
+                <i class="fas fa-download"></i> Download
+              </a>
+              <a href="#" class="cb-preview">
+                <i class="fas fa-eye"></i> Preview
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Geography Atlas -->
+        <div class="cb-card">
+          <div class="cb-cover">
+            <span class="cb-badge">Atlas</span>
+          </div>
+          <div class="cb-content">
+            <h3 class="cb-title">Ethiopian Geography Atlas</h3>
+            <p class="cb-author">Ethiopian Mapping Agency</p>
+            <div class="cb-meta">
+              <span class="cb-pages"><i class="fas fa-book-open"></i> 120 pages</span>
+              <span class="cb-year"><i class="fas fa-calendar-alt"></i> 2022</span>
+            </div>
+            <div class="cb-actions">
+              <a href="pdfs/geography-atlas.pdf" class="cb-download" download>
+                <i class="fas fa-download"></i> Download
+              </a>
+              <a href="#" class="cb-preview">
+                <i class="fas fa-eye"></i> Preview
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="cb-section" id="entrance-exam">
+      <h2 class="section-title"></h2>
+      
+      <div class="cb-grid">
+      </div>
+
+      <div>
+        <h1 style="
+          justify-content: center;
+          margin-top: 70px;
+          margin-bottom: 50px;
+          text-align: center;">
+          Premium Subscription Needed!
+        </h1>
+      </div>
+    </div>
+
+
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3>About us</h3>
+        <p>Established in 1997, the BGMCS Bahir Dar School Library supports students and teachers with a quiet reading space, textbooks, storybooks, and helpful reference materials.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="catalog.html">Book Catalog</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-col">
+        <h3>Opening Hours</h3>
+        <ul class="footer-links">
+          <li>Monday - Friday: 2am - 9am</li>
+        </ul>
+      </div>
+      
+      <div class="footer-col">
+        <h3>Contact Info</h3>
+        <p><i class="fas fa-map-marker-alt"></i> Kebele 13, Bahirdar</p>
+        <p><i class="fas fa-phone"></i> +251 918767822</p>
+        <p><i class="fas fa-envelope"></i> info@bgmcs.org</p>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2025 Blessed G/michael Catholic Secondary School Library. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <a href="#" class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
+  <script>
+    // Tab functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const tabs = document.querySelectorAll('.cb-tab');
+      const sections = document.querySelectorAll('.cb-section');
+      
+      tabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+          
+          tabs.forEach(t => t.classList.remove('active'));
+          sections.forEach(s => s.classList.remove('active'));
+          
+          this.classList.add('active');
+          const tabId = this.getAttribute('data-tab');
+          document.getElementById(tabId).classList.add('active');
+        });
+      });
+      
+      window.addEventListener('load', function() {
+        const preloader = document.querySelector('.preloader');
+        preloader.classList.add('fade-out');
+        setTimeout(() => {
+          preloader.style.display = 'none';
+        }, 500);
+      });
+    });
+  </script>
+  <script src="script.js" defer></script>
+</body>
+</html>
