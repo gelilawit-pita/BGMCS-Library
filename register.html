@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BGMCS Library | Register</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<script src="../js/script.js" defer></script>
+  <link rel="icon" href="https://img.icons8.com/ios-filled/50/000000/book.png" type="image/x-icon">
+</head>
+<body>
+  <div class="preloader">
+    <div class="spinner"></div>
+  </div>
+
+  <header>
+    <nav>
+      <a href="index.html" class="logo">
+        <img src="https://img.icons8.com/ios-filled/50/000000/book.png" alt="Library Logo">
+        <h1>BGMCS Library</h1>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="services.html"><i class="fas fa-concierge-bell"></i> Services</a></li>
+        <li><a href="events.html"><i class="fas fa-calendar-alt"></i> Events</a></li>
+        <li><a href="catalog.html"><i class="fas fa-book-open"></i> Catalog</a></li>
+        <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+        <li class="account-dropdown">
+    <a href="#"><i class="fas fa-user"></i> Account <i class="fas fa-chevron-down"></i></a>
+    <ul class="dropdown-menu">
+      <li><a href="login.html">Login</a></li>
+      <li><a href="register.html">Register</a></li>
+      </ul>
+      <div class="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </nav>
+  </header>
+
+  <section class="register-hero">
+    <div>
+      <h1>Create an Account</h1>
+      <p>Join our library community to borrow books, access digital resources, and more</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="auth-container">
+      <div class="auth-card animate-on-scroll">
+        <div class="auth-header">
+          <h2><i class="fas fa-user-plus"></i> Register</h2>
+        </div>
+        <div class="auth-body">
+          <form id="registerForm">
+            <div class="form-group">
+              <label for="registerName">Full Name</label>
+              <input type="text" id="registerName" required>
+            </div>
+            <div class="form-group">
+              <label for="registerEmail">Email Address</label>
+              <input type="email" id="registerEmail" required>
+            </div>
+            <div class="form-group">
+              <label for="registerPassword">Password (min 6 characters)</label>
+              <input type="password" id="registerPassword" minlength="6" required>
+            </div>
+            <div class="form-group">
+              <label for="registerConfirm">Confirm Password</label>
+              <input type="password" id="registerConfirm" minlength="6" required>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn">Register</button>
+              <p>Already have an account? <a href="login.html">Login here</a></p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <footer style="
+  padding: 5rem 5% 2rem;
+  background-color: var(--dark-brown);
+  color: var(--light-brown);
+  width: 100%;">
+    <div style="
+    display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;" class="footer-container">
+      <div class="footer-col">
+        <h3>About Us</h3>
+        <p>Established in 1997, the BGMCS Bahir Dar School Library supports students and teachers with a quiet reading space, textbooks, storybooks, and helpful reference materials. It plays a key role in encouraging learning and a love for reading.p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="catalog.html">Book Catalog</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+           <li class="account-dropdown">
+    <a href="#"><i class="fas fa-user"></i> Account <i class="fas fa-chevron-down"></i></a>
+    <ul class="dropdown-menu">
+      <li><a href="login.html">Login</a></li>
+      <li><a href="register.html">Register</a></li>
+    </ul>
+  </li>
+        </ul>
+      </div>
+      
+      <div class="footer-col">
+        <h3>Opening Hours</h3>
+        <ul class="footer-links">
+          <li>Monday - Friday: 2am - 9am</li>
+        </ul>
+      </div>
+      
+      <div class="footer-col">
+        <h3>Contact Info</h3>
+        <p><i class="fas fa-map-marker-alt"></i>  Kebele 13, Bahirdar</p>
+        <p><i class="fas fa-phone"></i>+251 918767822</p>
+        <p><i class="fas fa-envelope"></i> info@bgmcslibrary.org</p>
+      </div>
+    </div>
+    
+    <div style=
+    " text-align: center;
+  padding-top: 3rem;
+  margin-top: 3rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100%;"class="footer-bottom">
+      <p>&copy; 2025 Blessed G/michael Catholic Secondary School Library. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
